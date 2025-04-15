@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laxman & Sakshi - Wedding Invitation</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #e63946;
+            --secondary: #ffcb69;
+            --accent: #f7d08a;
+            --light: #fff9f0;
+            --dark: #333333;
+            --grey: #777777;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        body {
+            /* Yellow gradient background effect */
+            background: linear-gradient(135deg, #fffbe7 0%, #ffe066 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header/Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(255, 236, 179, 0.2) 0%, rgba(255, 203, 105, 0.3) 100%);
+        }
+
+        /* Decorative Elements */
+        .decorative-border {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            border: 2px solid var(--secondary);
+            z-index: 1;
+        }
+
+        .decorative-corner {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            z-index: 2;
+        }
+
+        .top-left {
+            top: -5px;
+            left: -5px;
+            border-top: 8px solid var(--primary);
+            border-left: 8px solid var(--primary);
+        }
+
+        .top-right {
+            top: -5px;
+            right: -5px;
+            border-top: 8px solid var(--primary);
+            border-right: 8px solid var(--primary);
+        }
+
+        .bottom-left {
+            bottom: -5px;
+            left: -5px;
+            border-bottom: 8px solid var(--primary);
+            border-left: 8px solid var(--primary);
+        }
+
+        .bottom-right {
+            bottom: -5px;
+            right: -5px;
+            border-bottom: 8px solid var(--primary);
+            border-right: 8px solid var(--primary);
+        }
+
+        .floral-decoration {
+            position: absolute;
+            font-size: 4rem;
+            color: var(--secondary);
+            opacity: 0.2;
+        }
+
+        .floral-1 {
+            top: 10%;
+            left: 5%;
+            transform: rotate(-30deg);
+        }
+
+        .floral-2 {
+            bottom: 10%;
+            right: 5%;
+            transform: rotate(30deg);
+        }
+
+        .floral-3 {
+            top: 70%;
+            left: 10%;
+            transform: rotate(45deg);
+        }
+
+        .floral-4 {
+            top: 20%;
+            right: 10%;
+            transform: rotate(-45deg);
+        }
+
+        .circle-decoration {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .circle-1 {
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 224, 102, 0.3) 0%, rgba(255, 224, 102, 0) 70%);
+        }
+
+        .circle-2 {
+            bottom: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 203, 105, 0.3) 0%, rgba(255, 203, 105, 0) 70%);
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            width: 90%;
+            max-width: 800px;
+            z-index: 3;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .save-the-date {
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-out 0.5s both;
+        }
+
+        .invitation-text {
+            font-size: 1.2rem;
+            color: var(--grey);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-out 1s both;
+        }
+
+        .couple-name {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            animation: fadeIn 2s ease-out 1.5s both;
+        }
+
+        .couple-name::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .wedding-date {
+            font-size: 2rem;
+            margin: 30px 0;
+            color: var(--dark);
+            animation: fadeIn 2s ease-out 2s both;
+        }
+
+        .venue {
+            font-size: 1.5rem;
+            color: var(--grey);
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-out 2.5s both;
+        }
+
+        .ornament {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin: 20px 0;
+            animation: fadeIn 2s ease-out 3s both;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--primary);
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .scroll-arrow {
+            margin-top: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
+        }
+
+        /* Countdown Section */
+        .countdown {
+            background: linear-gradient(to right, #fffbe7, white, #fffbe7);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .decorative-line {
+            position: absolute;
+            height: 2px;
+            width: 40%;
+            background-color: var(--secondary);
+            opacity: 0.3;
+        }
+
+        .line-left {
+            top: 50px;
+            left: 0;
+        }
+
+        .line-right {
+            bottom: 50px;
+            right: 0;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            margin-bottom: 50px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .countdown-segment {
+            background-color: white;
+            padding: 30px 20px;
+            min-width: 150px;
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .countdown-segment:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .countdown-segment::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: 10px 0 0 10px;
+        }
+
+        .time {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .label {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--grey);
+        }
+
+        /* Events Section */
+        .events {
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
+        }
+
+        .events::before, .events::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            background-size: 20px 40px;
+            left: 0;
+        }
+
+        .events::before {
+            top: 0;
+            background-image: linear-gradient(135deg, #fffbe7 25%, transparent 25%),
+                              linear-gradient(225deg, #fffbe7 25%, transparent 25%);
+            background-position: 0 0;
+        }
+
+        .events::after {
+            bottom: 0;
+            background-image: linear-gradient(135deg, transparent 25%, #fffbe7 25%),
+                              linear-gradient(225deg, transparent 25%, #fffbe7 25%);
+            background-position: 0 0;
+        }
+
+        .event-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .event-card {
+            background: linear-gradient(to bottom right, white, #fffbe7);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 380px;
+            transition: all 0.5s ease;
+            position: relative;
+            border-top: 5px solid var(--primary);
+        }
+
+        .event-card:hover {
+            transform: translateY(-15px) rotate(2deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(to right, var(--primary), #f05365);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .event-pattern {
+            position: absolute;
+            width: 100%;
+            height: 200px;
+            opacity: 0.05;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--primary),
+                var(--primary) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+        }
+
+        .event-details {
+            padding: 40px 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .event-name {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .event-info {
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+
+        .event-info span {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--grey);
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .event-info i {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            color: var(--secondary);
+        }
+
+        .event-description {
+            color: var(--dark);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Map Button */
+        .map-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: linear-gradient(90deg, #ffe066 0%, #ffd700 100%);
+            color: #4b3c00;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(255, 200, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .map-btn:hover {
+            background: linear-gradient(90deg, #ffd700 0%, #ffe066 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 200, 0, 0.3);
+        }
+
+        /* Thank You Section */
+        .thank-you {
+            padding: 120px 0;
+            background: linear-gradient(135deg, rgba(255, 236, 179, 0.2) 0%, rgba(255, 203, 105, 0.3) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .heart-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 25rem;
+            color: rgba(230, 57, 70, 0.03);
+            z-index: 0;
+        }
+
+        .thank-you-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .thank-you-text {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin: 30px 0;
+            line-height: 1.8;
+        }
+
+        .couple-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-top: 40px;
+        }
+
+        .signature-decoration {
+            display: inline-block;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--secondary), transparent);
+            margin: 20px 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            position: relative;
+        }
+
+        .footer-decoration {
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            top: -25px;
+            left: 0;
+            background: linear-gradient(to right, transparent, var(--primary), transparent);
+        }
+
+        .footer-text {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-date {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--secondary);
+            margin: 20px 0;
+        }
+
+        .social-icons {
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            color: white;
+            margin: 0 15px;
+            font-size: 1.8rem;
+            transition: all 0.5s ease;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary);
+            transform: translateY(-8px) rotate(360deg);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .couple-name {
+                font-size: 3rem;
+            }
+
+            .wedding-date {
+                font-size: 1.5rem;
+            }
+
+            .countdown-segment {
+                min-width: 120px;
+            }
+
+            .time {
+                font-size: 2.5rem;
+            }
+
+            .event-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .event-card {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .hero-content {
+                padding: 40px 20px;
+            }
+
+            .thank-you-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Hero Section -->
+    <header>
+        <div class="circle-decoration circle-1"></div>
+        <div class="circle-decoration circle-2"></div>
+        
+        <div class="floral-decoration floral-1">❀</div>
+        <div class="floral-decoration floral-2">❀</div>
+        <div class="floral-decoration floral-3">✿</div>
+        <div class="floral-decoration floral-4">✿</div>
+        
+        <div class="decorative-border">
+            <div class="decorative-corner top-left"></div>
+            <div class="decorative-corner top-right"></div>
+            <div class="decorative-corner bottom-left"></div>
+            <div class="decorative-corner bottom-right"></div>
+        </div>
+        
+        <div class="hero-content">
+            <p class="save-the-date">Save the Date</p>
+            <p class="invitation-text">We cordially invite you to celebrate our wedding</p>
+            <h1 class="couple-name">Laxman & Sakshi</h1>
+            <div class="ornament">❦</div>
+            <p class="wedding-date">April 20, 2025</p>
+            <p class="venue">Shivalaya, Ankali</p>
+            <a href="https://maps.app.goo.gl/BdNaMLVSfN4SQ8wa8" target="_blank" class="map-btn">
+                <i class="fa fa-map-marker"></i> View on Google Maps
+            </a>
+        </div>
+        
+        <div class="scroll-down" id="scrollDown">
+            <span>Scroll Down</span>
+            <span class="scroll-arrow">
+                <i class="fa fa-angle-down"></i>
+            </span>
+        </div>
+    </header>
+
+    <!-- Countdown Section -->
+    <section class="countdown">
+        <div class="decorative-line line-left"></div>
+        <div class="decorative-line line-right"></div>
+        <div class="container">
+            <h2 class="section-title">Counting Down to Forever</h2>
+            <div class="countdown-timer" id="countdown">
+                <div class="countdown-segment">
+                    <div class="time" id="days">00</div>
+                    <div class="label">Days</div>
+                </div>
+                <div class="countdown-segment">
+                    <div class="time" id="hours">00</div>
+                    <div class="label">Hours</div>
+                </div>
+                <div class="countdown-segment">
+                    <div class="time" id="minutes">00</div>
+                    <div class="label">Minutes</div>
+                </div>
+                <div class="countdown-segment">
+                    <div class="time" id="seconds">00</div>
+                    <div class="label">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events" id="events">
+        <div class="container">
+            <h2 class="section-title">Wedding Events</h2>
+            <div class="event-cards">
+                <div class="event-card">
+                    <div class="event-tag">Day 1</div>
+                    <div class="event-pattern"></div>
+                    <div class="event-details">
+                        <h3 class="event-name">Haldi Ceremony</h3>
+                        <div class="event-info">
+                            <span><i class="fa fa-calendar"></i> April 19, 2025</span>
+                            <span><i class="fa fa-clock-o"></i> 7:00 PM</span>
+                            <span><i class="fa fa-map-marker"></i> Shivalaya, Ankali</span>
+                            <span><i class="fa fa-paint-brush"></i> Traditional Yellow Attire</span>
+                        </div>
+                        <p class="event-description">
+                            The auspicious Haldi ceremony marks the beginning of our wedding celebrations. During this traditional ritual, a paste made from turmeric (haldi), sandalwood, and rose water is applied to the bride and groom by family members to bless the couple with prosperity and ward off evil. The yellow color symbolizes purity and is a part of the holy preparation for the wedding ceremony.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-tag">Day 2</div>
+                    <div class="event-pattern"></div>
+                    <div class="event-details">
+                        <h3 class="event-name">Wedding Ceremony</h3>
+                        <div class="event-info">
+                            <span><i class="fa fa-calendar"></i> April 20, 2025</span>
+                            <span><i class="fa fa-clock-o"></i> 12:33 PM</span>
+                            <span><i class="fa fa-map-marker"></i> Shivalaya, Ankali</span>
+                            <span><i class="fa fa-info-circle"></i> Traditional Wedding Attire</span>
+                        </div>
+                        <p class="event-description">
+                            We invite you to witness our sacred union as we exchange vows and begin our journey together as husband and wife. The wedding ceremony will be performed according to traditional Hindu rituals beneath the sacred fire (Agni), symbolizing our eternal commitment to one another. Your blessings and presence will make our special day complete and truly memorable.
+                        </p>
+                        <a href="https://maps.app.goo.gl/BdNaMLVSfN4SQ8wa8" target="_blank" class="map-btn">
+                            <i class="fa fa-map-marker"></i> View on Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thank You Section -->
+    <section class="thank-you" id="thank-you">
+        <div class="heart-bg">❤</div>
+        <div class="container">
+            <div class="thank-you-content">
+                <h2 class="section-title">Thank You</h2>
+                <p class="thank-you-text">
+                    Words cannot express our gratitude for your presence on our special day. Your blessings and well-wishes mean the world to us as we begin this beautiful journey together.
+                </p>
+                <p class="thank-you-text">
+                    We are truly blessed to have friends and family like you in our lives. Thank you for being part of our story and for celebrating this momentous occasion with us.
+                </p>
+                <div class="signature-decoration"></div>
+                <p class="couple-signature">Laxman & Sakshi</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-decoration"></div>
+                <p class="footer-text">With love and gratitude</p>
+                <p class="footer-date">April 20, 2025</p>
+                <p class="footer-text">Shivalaya, Ankali</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <script>
+        // Countdown Timer
+        const weddingDate = new Date('April 20, 2025 19:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            // Calculate days, hours, minutes, seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display countdown
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll down button
+        document.getElementById('scrollDown').addEventListener('click', function() {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+
+        // Animate elements on scroll
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.event-card, .countdown-segment, .thank-you-content');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Initial style for animation
+        document.querySelectorAll('.event-card, .countdown-segment, .thank-you-content').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(50px)';
+            element.style.transition = 'all 1s ease';
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Add animated background for title
+        const titles = document.querySelectorAll('.section-title');
+        titles.forEach(title => {
+            title.style.backgroundSize = '200% 100%';
+            title.style.backgroundPosition = 'right bottom';
+            title.style.transition = 'all 1s ease';
+            title.addEventListener('mouseover', function() {
+                this.style.backgroundPosition = 'left bottom';
+            });
+            title.addEventListener('mouseout', function() {
+                this.style.backgroundPosition = 'right bottom';
+            });
+        });
+    </script>
+</body>
+</html>
